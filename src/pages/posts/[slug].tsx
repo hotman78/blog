@@ -9,8 +9,11 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from 'zenn-markdown-html';
+import markdownToHtml from 'zenn-markdown-html'
 import type PostType from '../../interfaces/post'
+import type TableOfContent from '../../interfaces/tableOfContent'
+import PostSidebar from '../../components/post-sidebar'
+import { JSDOM } from 'jsdom'
 
 type Props = {
   post: PostType
@@ -31,21 +34,28 @@ export default function Post({ post, morePosts, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32 flex flex-row">
+            <article className="mb-32">
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
-              <PostHeader />
-              <PostBody
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-                content={post.content}
-              />
+              <div className="flex flex-wrap">
+                <div>
+                  <PostHeader/>
+                  <PostBody
+                    date={post.date}
+                    title={post.title}
+                    content={post.content}
+                  />
+                </div>
+                <PostSidebar
+                  coverImage={post.coverImage}
+                  author={post.author}
+                  tableOfContent={post.tableOfContent}
+                />
+              </div>
             </article>
           </>
         )}
@@ -71,12 +81,24 @@ export async function getStaticProps({ params }: Params) {
     'coverImage',
   ])
   const content = await markdownToHtml(post.content || '')
-
+  const domHtml = new JSDOM(content).window.document
+  // 目次の取得
+  const elements = domHtml.querySelectorAll<HTMLElement>("h2")
+  const tableOfContent: TableOfContent[] = []
+  elements.forEach((element) => {
+    const level = element.tagName
+    const title = element.innerHTML.split("</a> ")[1]
+    const href = "#" + element.id
+    const record = { level: level, title: title, href: href }
+    tableOfContent.push(record)
+    console.log(record);
+  });
   return {
     props: {
       post: {
         ...post,
         content,
+        tableOfContent: tableOfContent,
       },
     },
   }

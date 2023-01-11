@@ -1,7 +1,10 @@
-type Props = {}
 
-const PostHeader = () => {
-  return (<></>
+type Props = {
+}
+
+const PostHeader = ({}: Props) => {
+  return (<>
+  </>
   )
 }
 
