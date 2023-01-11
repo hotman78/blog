@@ -31,20 +31,21 @@ export default function Post({ post, morePosts, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32 znc">
+            <article className="mb-32 flex flex-row">
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
-              <PostHeader
+              <PostHeader />
+              <PostBody
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                content={post.content}
               />
-              <PostBody content={post.content} />
             </article>
           </>
         )}

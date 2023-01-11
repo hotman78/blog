@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <script src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
       </Head>
-      <body>
+      <body className="bg-accent-2">
         <Main />
         <NextScript />
       </body>
