@@ -9,7 +9,7 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from 'zenn-markdown-html'
+import markdownToHtml from '../../lib/markdownToHtml'
 import type PostType from '../../interfaces/post'
 import type TableOfContent from '../../interfaces/tableOfContent'
 import PostSidebar from '../../components/post-sidebar'
@@ -26,6 +26,7 @@ export default function Post({ post, morePosts, preview }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  post.ogImage ??= { url: '/assets/blog/preview/cover.jpg' }
   return (
     <Layout preview={preview}>
       <Container>
@@ -34,7 +35,7 @@ export default function Post({ post, morePosts, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="mb-32 znc">
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
@@ -52,7 +53,7 @@ export default function Post({ post, morePosts, preview }: Props) {
                 </div>
                 <PostSidebar
                   coverImage={post.coverImage}
-                  author={post.author}
+                  author={post.author ?? {name : 'hotman78', picture : '/assets/blog/authors/hotman78.jpg'}}
                   tableOfContent={post.tableOfContent}
                 />
               </div>
@@ -83,7 +84,7 @@ export async function getStaticProps({ params }: Params) {
   const content = await markdownToHtml(post.content || '')
   const domHtml = new JSDOM(content).window.document
   // 目次の取得
-  const elements = domHtml.querySelectorAll<HTMLElement>("h2")
+  const elements = domHtml.querySelectorAll<HTMLElement>("h1, h2")
   const tableOfContent: TableOfContent[] = []
   elements.forEach((element) => {
     const level = element.tagName
@@ -98,7 +99,7 @@ export async function getStaticProps({ params }: Params) {
       post: {
         ...post,
         content,
-        tableOfContent: tableOfContent,
+        tableOfContent,
       },
     },
   }
