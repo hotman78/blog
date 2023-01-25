@@ -1,8 +1,10 @@
+import markdownStyles from './markdown-styles.module.css'
 import Avatar from './avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import type Author from '../interfaces/author'
+import markdownToHtml from '../lib/markdownToHtml'
 
 type Props = {
   title: string
@@ -21,6 +23,7 @@ const PostPreview = ({
   author,
   slug,
 }: Props) => {
+  const excerpt_html=markdownToHtml(excerpt ?? '')
   return (
     <div>
       <div className="mb-5">
@@ -38,8 +41,10 @@ const PostPreview = ({
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
+      <div
+        className={`text-lg leading-relaxed mb-4 znc ${markdownStyles['markdown']}`}
+        dangerouslySetInnerHTML={{ __html: excerpt_html }}
+      />
     </div>
   )
 }

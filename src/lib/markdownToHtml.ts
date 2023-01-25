@@ -3,7 +3,7 @@ import html from 'remark-html'
 import zenn from 'zenn-markdown-html'
 import {visit} from 'unist-util-visit'
 
-export default async function markdownToHtml(markdown: string) {
+export default function markdownToHtml(markdown: string) {
   // const result = await remark()
   //   .use(myRemarkPluginToIncreaseHeadings)
   //   .use(html)
