@@ -38,19 +38,17 @@ export default function Post({ post, morePosts, preview }: Props) {
             <article className="mb-32 znc">
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title}
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <div className="flex flex-wrap">
-                <div>
-                  <PostHeader/>
-                  <PostBody
-                    date={post.date}
-                    title={post.title}
-                    content={post.content}
-                  />
-                </div>
+                <PostHeader/>
+                <PostBody
+                  date={post.date}
+                  title={post.title}
+                  content={post.content}
+                />
                 <PostSidebar
                   coverImage={post.coverImage}
                   author={post.author ?? {name : 'hotman78', picture : '/assets/blog/authors/hotman78.jpg'}}
