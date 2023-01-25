@@ -76,5 +76,5 @@ noshi91さんに桁DPの有名題を非決定性桁DPで解いて頂いたやつ
 とても機械的に解けるようになっていて分かりやすいので是非参考にしてみて下さい！！
 
 ::::details twitterリンク(Atcoderの問題へのリンクあり)
-https://twitter.com/noshi91/status/1473633490617126919?ref_src=twsrc%5Etfw
+https://twitter.com/noshi91/status/1473633490617126919
 ::::
