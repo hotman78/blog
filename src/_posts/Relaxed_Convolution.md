@@ -54,11 +54,9 @@ $f_0$ と $g_0$ に関しては高々定数項しかないため前半3項は愚
 # inv のやり方
 $g=1/f$ とおくと、 $fg-1=0$ であることから、
 
-$$
-[x^N] fg = [x^N] (f \bmod x^{N-1}) \times (g \mod x^{N-1}) + ([x^N]f \times [x^N]g + [x^N]f  \times x^0)g
-$$
+$$[x^N] fg = [x^N] (f \bmod x^{N-1}) \times (g \mod x^{N-1}) + ([x^0]f \times [x^N]g + [x^N]f  \times [x^0]g)$$
 
-を前章の拡張を用いて計算する事で$g$の$N$項目を求める事が出来ます。
+を前章の拡張を用いて計算する事で $g$ の $N$ 項目を求める事が出来ます。
 
 verify : [https://judge.yosupo.jp/submission/119569$
 
