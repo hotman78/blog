@@ -7,6 +7,6 @@ const withBundleAnalyzer = bundle_analyzer({
 /**
  * @type {import('next').NextConfig}
  */
-const nextConfig = withBundleAnalyzer({})
+const nextConfig = withBundleAnalyzer({});
 
-export default nextConfig
+export default nextConfig;
