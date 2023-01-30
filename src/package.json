@@ -5,9 +5,10 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc",
-    "lint-fix": "eslint --cache --fix . && prettier --write ."
+    "fix": "eslint --cache --fix . && prettier --write ."
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^13.1.6",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "classnames": "^2.3.1",
@@ -17,8 +18,6 @@
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1",
     "typescript": "^4.7.4",
     "zenn-content-css": "^0.1.131",
     "zenn-embed-elements": "^0.1.131",
