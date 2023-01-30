@@ -18,12 +18,12 @@ const MoreStories = ({ posts }: Props) => {
             title={post.title}
             // coverImage={post.coverImage}
             date={post.date}
-            author={
-              post.author ?? {
-                name: "hotman78",
-                picture: "/assets/blog/authors/hotman78.jpg"
-              }
-            }
+            // author={
+            //   post.author ?? {
+            //     name: "hotman78",
+            //     picture: "/assets/blog/authors/hotman78.jpg"
+            //   }
+            // }
             slug={post.slug}
             excerpt={post.excerpt}
           />
