@@ -20,7 +20,7 @@ const PostSidebar = ({ author, tableOfContent }: Props) => {
         <div className="hidden md:block md:mb-12">
         </div>
       </div> */}
-      <PostTOC tableOfContent={tableOfContent} />
+      {tableOfContent.lenght > 0 && <PostTOC tableOfContent={tableOfContent} />}
     </>
   );
 };
