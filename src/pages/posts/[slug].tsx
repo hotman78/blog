@@ -9,10 +9,9 @@ import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
 import Head from "next/head";
 import markdownToHtml from "../../lib/markdownToHtml";
+import tableOfContent from "../../lib/tableOfContent";
 import type PostType from "../../interfaces/post";
-import type TableOfContent from "../../interfaces/tableOfContent";
 import PostSidebar from "../../components/post-sidebar";
-import { JSDOM } from "jsdom";
 
 type Props = {
   post: PostType;
@@ -82,24 +81,13 @@ export async function getStaticProps({ params }: Params) {
     "coverImage"
   ]);
   const content = await markdownToHtml(post.content || "");
-  const domHtml = new JSDOM(content).window.document;
-  // 目次の取得
-  const elements = domHtml.querySelectorAll<HTMLElement>("h1, h2");
-  const tableOfContent: TableOfContent[] = [];
-  elements.forEach(element => {
-    const level = element.tagName;
-    const title = element.innerHTML.split("</a> ")[1];
-    const href = "#" + element.id;
-    const record = { level: level, title: title, href: href };
-    tableOfContent.push(record);
-    console.log(record);
-  });
+  const toc = tableOfContent(content);
   return {
     props: {
       post: {
         ...post,
         content,
-        tableOfContent
+        tableOfContent: toc
       }
     }
   };
