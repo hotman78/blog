@@ -1,32 +1,31 @@
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
-import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
-import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
-import type PostType from '../../interfaces/post'
-import type TableOfContent from '../../interfaces/tableOfContent'
-import PostSidebar from '../../components/post-sidebar'
-import { JSDOM } from 'jsdom'
+import { useRouter } from "next/router";
+import ErrorPage from "next/error";
+import Container from "../../components/container";
+import PostBody from "../../components/post-body";
+import Header from "../../components/header";
+import PostHeader from "../../components/post-header";
+import Layout from "../../components/layout";
+import { getPostBySlug, getAllPosts } from "../../lib/api";
+import PostTitle from "../../components/post-title";
+import Head from "next/head";
+import markdownToHtml from "../../lib/markdownToHtml";
+import type PostType from "../../interfaces/post";
+import type TableOfContent from "../../interfaces/tableOfContent";
+import PostSidebar from "../../components/post-sidebar";
+import { JSDOM } from "jsdom";
 
 type Props = {
-  post: PostType
-  morePosts: PostType[]
-  preview?: boolean
-}
+  post: PostType;
+  morePosts: PostType[];
+  preview?: boolean;
+};
 
 export default function Post({ post, morePosts, preview }: Props) {
-  const router = useRouter()
+  const router = useRouter();
   if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage statusCode={404} />;
   }
-  post.ogImage ??= { url: '/assets/blog/preview/cover.jpg' }
+  post.ogImage ??= { url: "/assets/blog/preview/cover.jpg" };
   return (
     <Layout preview={preview}>
       <Container>
@@ -37,13 +36,11 @@ export default function Post({ post, morePosts, preview }: Props) {
           <>
             <article className="mb-32 znc">
               <Head>
-                <title>
-                  {post.title}
-                </title>
+                <title>{post.title}</title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <div className="flex flex-wrap">
-                <PostHeader/>
+                <PostHeader />
                 <PostBody
                   date={post.date}
                   title={post.title}
@@ -51,7 +48,12 @@ export default function Post({ post, morePosts, preview }: Props) {
                 />
                 <PostSidebar
                   coverImage={post.coverImage}
-                  author={post.author ?? {name : 'hotman78', picture : '/assets/blog/authors/hotman78.jpg'}}
+                  author={
+                    post.author ?? {
+                      name: "hotman78",
+                      picture: "/assets/blog/authors/hotman78.jpg"
+                    }
+                  }
                   tableOfContent={post.tableOfContent}
                 />
               </div>
@@ -60,36 +62,36 @@ export default function Post({ post, morePosts, preview }: Props) {
         )}
       </Container>
     </Layout>
-  )
+  );
 }
 
 type Params = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ])
-  const content = await markdownToHtml(post.content || '')
-  const domHtml = new JSDOM(content).window.document
+    "title",
+    "date",
+    "slug",
+    "author",
+    "content",
+    "ogImage",
+    "coverImage"
+  ]);
+  const content = await markdownToHtml(post.content || "");
+  const domHtml = new JSDOM(content).window.document;
   // 目次の取得
-  const elements = domHtml.querySelectorAll<HTMLElement>("h1, h2")
-  const tableOfContent: TableOfContent[] = []
-  elements.forEach((element) => {
-    const level = element.tagName
-    const title = element.innerHTML.split("</a> ")[1]
-    const href = "#" + element.id
-    const record = { level: level, title: title, href: href }
-    tableOfContent.push(record)
+  const elements = domHtml.querySelectorAll<HTMLElement>("h1, h2");
+  const tableOfContent: TableOfContent[] = [];
+  elements.forEach(element => {
+    const level = element.tagName;
+    const title = element.innerHTML.split("</a> ")[1];
+    const href = "#" + element.id;
+    const record = { level: level, title: title, href: href };
+    tableOfContent.push(record);
     console.log(record);
   });
   return {
@@ -97,23 +99,23 @@ export async function getStaticProps({ params }: Params) {
       post: {
         ...post,
         content,
-        tableOfContent,
-      },
-    },
-  }
+        tableOfContent
+      }
+    }
+  };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPosts(["slug"]);
 
   return {
-    paths: posts.map((post) => {
+    paths: posts.map(post => {
       return {
         params: {
-          slug: post.slug,
-        },
-      }
+          slug: post.slug
+        }
+      };
     }),
-    fallback: false,
-  }
+    fallback: false
+  };
 }

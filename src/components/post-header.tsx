@@ -1,11 +1,5 @@
+const PostHeader = () => {
+  return <></>;
+};
 
-type Props = {
-}
-
-const PostHeader = ({}: Props) => {
-  return (<>
-  </>
-  )
-}
-
-export default PostHeader
+export default PostHeader;

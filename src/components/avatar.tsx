@@ -1,7 +1,7 @@
 type Props = {
-  name: string
-  picture: string
-}
+  name: string;
+  picture: string;
+};
 
 const Avatar = ({ name, picture }: Props) => {
   return (
@@ -11,7 +11,7 @@ const Avatar = ({ name, picture }: Props) => {
         <div className="text-xl font-bold">{name}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Avatar
+export default Avatar;
