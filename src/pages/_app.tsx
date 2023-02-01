@@ -8,6 +8,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     import("zenn-embed-elements"); // 数式をブラウザでレンダリングできるようにします
   }, []);
-  <Analytics />
   return <Component {...pageProps} />;
+  <Analytics />
 }
