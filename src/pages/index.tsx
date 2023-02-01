@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import Post from "../interfaces/post";
+import Header from "../components/header";
 
 type Props = {
   allPosts: Post[];
@@ -20,7 +21,6 @@ export default function Index({ allPosts }: Props) {
           <title> hotmanの備忘録とライブラリ置き場 </title>
         </Head>
         <Container>
-          <Intro />
           {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
