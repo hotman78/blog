@@ -2,7 +2,7 @@ import PostType from "../interfaces/post";
 import PostTOC from "./post-toc";
 type Props = { post:PostType }
 
-const PostSidebar = ( { post } : Props) => {
+const PostLeftSidebar = ({ post } : Props) => {
   return (
     <>
       {post.tableOfContent.length > 0 && <PostTOC tableOfContent={post.tableOfContent} />}
@@ -10,4 +10,4 @@ const PostSidebar = ( { post } : Props) => {
   );
 };
 
-export default PostSidebar;
+export default PostLeftSidebar;

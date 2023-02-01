@@ -34,25 +34,12 @@ export default function Post({ post, preview }: Props) {
             <article className="mb-32 znc">
               <Head>
                 <title>{post.title}</title>
-                <meta property="og:image" content={post.ogImage.url} />
+                {/* <meta property="og:image" content={post.ogImage.url} /> */}
               </Head>
               <div className="flex flex-wrap">
                 <PostHeader />
-                <PostBody
-                  date={post.date}
-                  title={post.title}
-                  content={post.content}
-                />
-                <PostSidebar
-                  coverImage={post.coverImage}
-                  author={
-                    post.author ?? {
-                      name: "hotman78",
-                      picture: "/assets/blog/authors/hotman78.jpg"
-                    }
-                  }
-                  tableOfContent={post.tableOfContent}
-                />
+                <PostBody post={post}/>
+                <PostSidebar post={post}/>
               </div>
             </article>
           </>
