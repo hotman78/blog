@@ -38,10 +38,10 @@ const PostPreview = ({
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
-      <div
+      {/* <div
         className={`text-lg leading-relaxed mb-4 znc ${markdownStyles["markdown"]}`}
         dangerouslySetInnerHTML={{ __html: excerpt_html }}
-      />
+      /> */}
     </div>
   );
 };
