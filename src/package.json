@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc",
-    "fix": "eslint --cache --fix . && prettier --write . && markdownlint . --ignore node_modules"
+    "fix": "eslint --cache --fix . && prettier --write . && markdownlint . --ignore node_modules",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.2.1",
@@ -14,6 +15,7 @@
     "@next/mdx": "^13.1.6",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
+    "@vercel/analytics": "^0.1.8",
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
     "gray-matter": "^4.0.3",
