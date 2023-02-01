@@ -2,9 +2,13 @@ import markdownStyles from "./markdown-styles.module.css";
 import DateFormatter from "./date-formatter";
 import Link from "next/link";
 import markdownToHtml from "../lib/markdownToHtml";
-import type Post from "../interfaces/post";
+import PostType from "../interfaces/post";
 
-const PostPreview = (post: Post) => {
+type Props = {
+  post: PostType;
+};
+
+const PostPreview = ({ post }: Props) => {
   return (
     <div>
       <div className="mb-5">
