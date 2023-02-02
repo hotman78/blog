@@ -38,8 +38,8 @@ export default function Post({ post, preview }: Props) {
               </Head>
               <div className="flex flex-wrap">
                 <PostHeader />
-                <PostBody post={post}/>
-                <PostSidebar post={post}/>
+                <PostBody post={post} />
+                <PostSidebar post={post} />
               </div>
             </article>
           </>

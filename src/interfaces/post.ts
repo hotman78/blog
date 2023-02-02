@@ -9,6 +9,7 @@ type PostType = {
   author: Author;
   tableOfContent: TableOfContent[];
   excerpt: string;
+  url: string;
   ogImage: {
     url: string;
   };

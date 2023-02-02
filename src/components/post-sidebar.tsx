@@ -1,11 +1,13 @@
 import PostType from "../interfaces/post";
 import PostTOC from "./post-toc";
-type Props = { post:PostType }
+type Props = { post: PostType };
 
-const PostSidebar = ( { post } : Props) => {
+const PostSidebar = ({ post }: Props) => {
   return (
     <>
-      {post.tableOfContent.length > 0 && <PostTOC tableOfContent={post.tableOfContent} />}
+      {post.tableOfContent.length > 0 && (
+        <PostTOC tableOfContent={post.tableOfContent} />
+      )}
     </>
   );
 };
