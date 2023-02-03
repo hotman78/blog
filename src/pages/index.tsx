@@ -16,7 +16,7 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title> Hotman's blog </title>
+          <title> Hotman s blog </title>
         </Head>
         <Container>
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
