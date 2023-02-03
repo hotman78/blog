@@ -11,8 +11,11 @@ type Props = {
 
 const PostPreview = ({ post }: Props) => {
   return (
-    <Card>
-      <h3 className="text-2xl mb-3 leading-snug">
+    <Card css="max-w-2xl">
+      <div className="text-lg mb-4">
+        <DateFormatter dateString={post.date} />
+      </div>
+      <h3 className="text-2xl font-medium mb-3 leading-snug">
         <Link
           as={`/posts/${post.slug}`}
           href="/posts/[slug]"
@@ -21,9 +24,6 @@ const PostPreview = ({ post }: Props) => {
           {post.title}
         </Link>
       </h3>
-      <div className="text-lg mb-4">
-        <DateFormatter dateString={post.date} />
-      </div>
     </Card>
   );
 };

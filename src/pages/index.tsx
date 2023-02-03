@@ -16,19 +16,9 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title> hotmanの備忘録とライブラリ置き場 </title>
+          <title> Hotman's blog </title>
         </Head>
         <Container>
-          {/* {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )} */}
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
         </Container>
       </Layout>
