@@ -2,6 +2,7 @@ import PostTitle from "./title";
 import DateFormatter from "../date-formatter";
 import type PostType from "../../interfaces/post";
 import Card from "../card"
+import Comments from "../comment";
 
 type Props = { post: PostType };
 const PostBody = ({ post }: Props) => {
@@ -12,6 +13,7 @@ const PostBody = ({ post }: Props) => {
       <div
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
+      <Comments/>
     </Card>
   );
 };
