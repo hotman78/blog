@@ -67,7 +67,7 @@ $$[x^N] fg = [x^N] (f \bmod x^{N-1}) \times (g \mod x^{N-1}) + ([x^0]f \times [x
 
 を前章の拡張を用いて計算する事で $g$ の $N$ 項目を求める事が出来ます。
 
-verify : [https://judge.yosupo.jp/submission/119569$
+verify : https://judge.yosupo.jp/submission/119569
 
 # log のやり方
 
