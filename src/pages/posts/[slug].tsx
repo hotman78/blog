@@ -11,6 +11,7 @@ import markdownToHtml from "../../lib/markdownToHtml";
 import tableOfContent from "../../lib/tableOfContent";
 import type PostType from "../../interfaces/post";
 import PostSidebar from "../../components/post/sidebar";
+import { useMemo } from "react";
 
 type Props = {
   post: PostType;
@@ -23,7 +24,9 @@ export default function Post({ post, preview }: Props) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
-  post.ogImage ??= { url: "/assets/blog/preview/cover.jpg" };
+  const ogImage = useMemo(() => {
+    return `/api/og?title=${post.title}`;
+  }, [post.title]);
   return (
     <Layout preview={preview}>
       <Container>
@@ -34,7 +37,7 @@ export default function Post({ post, preview }: Props) {
             <article className="mb-32 znc">
               <Head>
                 <title>{post.title}</title>
-                {/* <meta property="og:image" content={post.ogImage.url} /> */}
+                <meta property="og:image" content={ogImage} />
               </Head>
               <div className="flex flex-wrap">
                 <PostHeader />
