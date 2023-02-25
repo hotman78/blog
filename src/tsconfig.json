@@ -21,6 +21,6 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.mdx",
-    "next.config.js"
+    "next.config.mjs"
   ]
 }

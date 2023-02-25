@@ -12,6 +12,7 @@ import tableOfContent from "../../lib/tableOfContent";
 import type PostType from "../../interfaces/post";
 import PostSidebar from "../../components/post/sidebar";
 import { useMemo } from "react";
+import Comments from "../../components/comment";
 
 type Props = {
   post: PostType;
@@ -34,15 +35,16 @@ export default function Post({ post, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32 znc">
+            <article>
               <Head>
                 <title>{post.title}</title>
                 <meta property="og:image" content={ogImage} />
               </Head>
-              <div className="flex flex-wrap">
+              <div>
                 <PostHeader />
                 <PostBody post={post} />
-                <PostSidebar post={post} />
+                {/* <PostSidebar post={post} /> */}
+                <Comments/>
               </div>
             </article>
           </>
@@ -68,7 +70,7 @@ export async function getStaticProps({ params }: Params) {
     "ogImage",
     "coverImage"
   ]);
-  const content = await markdownToHtml(post.content || "");
+  const content = String(await markdownToHtml(post.content || ""));
   const toc = tableOfContent(content);
   return {
     props: {
