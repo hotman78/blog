@@ -43,14 +43,14 @@ const Article = ({ post }: Props) => {
                                                             </div>
                                                         </div>
                                                         <p className="text-sm text-gray-400">
-                                                            Leyla is a Customer Success Specialist at Preline and spends her time speaking to in-house recruiters all over the world.
+                                                            hotman78 is a Competitive Programmer and Waseda University student.
                                                         </p>
                                                     </div>
                                                     {/* End Body */}
 
                                                     {/* Footer */}
-                                                    <div className="flex justify-between items-center px-4 py-3 sm:px-5">
-                                                        <ul className="text-xs space-x-3">
+                                                    {/* <div className="flex justify-between items-center px-4 py-3 sm:px-5"> */}
+                                                        {/* <ul className="text-xs space-x-3">
                                                             <li className="inline-block">
                                                                 <span className="font-semibold text-gray-200">56</span>
                                                                 <span className="text-gray-400">articles</span>
@@ -59,9 +59,9 @@ const Article = ({ post }: Props) => {
                                                                 <span className="font-semibold text-gray-200">1k+</span>
                                                                 <span className="text-gray-400">followers</span>
                                                             </li>
-                                                        </ul>
+                                                        </ul> */}
 
-                                                        <div>
+                                                        {/* <div>
                                                             <button type="button" className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-1.5 rounded-md border border-transparent font-semibold bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 text-xs">
                                                                 <svg className="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                                                     <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -69,8 +69,8 @@ const Article = ({ post }: Props) => {
                                                                 </svg>
                                                                 Follow
                                                             </button>
-                                                        </div>
-                                                    </div>
+                                                        </div> */}
+                                                    {/* </div> */}
                                                     {/* End Footer */}
                                                 </div>
                                                 {/* End Dropdown Card */}
@@ -80,11 +80,11 @@ const Article = ({ post }: Props) => {
 
                                         <ul className="text-xs text-gray-500">
                                             <li className="inline-block relative pr-6 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600">
-                                                Jan 18
+                                                {post.date}
                                             </li>
-                                            <li className="inline-block relative pr-6 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600">
+                                            {/* <li className="inline-block relative pr-6 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600">
                                                 8 min read
-                                            </li>
+                                            </li> */}
                                         </ul>
                                     </div>
 
