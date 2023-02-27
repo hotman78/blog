@@ -1,9 +1,8 @@
-
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "experimental-edge"
 };
 
 export default function handler(req: NextRequest) {
@@ -29,7 +28,7 @@ export default function handler(req: NextRequest) {
             alignItems: "flex-start",
             justifyContent: "center",
             flexDirection: "column",
-            flexWrap: "nowrap",
+            flexWrap: "nowrap"
           }}
         >
           <div
@@ -42,7 +41,7 @@ export default function handler(req: NextRequest) {
               padding: "0 120px",
               lineHeight: 1.3,
               marginBottom: "30px",
-              wordWrap: "break-word",
+              wordWrap: "break-word"
             }}
           >
             {title}
@@ -55,7 +54,7 @@ export default function handler(req: NextRequest) {
               fontWeight: "bold",
               color: "#000",
               padding: "0 120px",
-              lineHeight: 1.3,
+              lineHeight: 1.3
             }}
           >
             ✏️ OG Image Examples
@@ -64,13 +63,13 @@ export default function handler(req: NextRequest) {
       ),
       {
         width: 1200,
-        height: 630,
+        height: 630
       }
     );
   } catch (e: any) {
     console.log(`${e.message}`);
     return new Response(`Failed to generate the image`, {
-      status: 500,
+      status: 500
     });
   }
 }

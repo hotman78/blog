@@ -1,8 +1,8 @@
 import withBundleAnalyzer from "@next/bundle-analyzer";
-import rehypeKatex from 'rehype-katex' // Render math with KaTeX.
+import rehypeKatex from "rehype-katex"; // Render math with KaTeX.
 import remarkGfm from "remark-gfm";
 import createMDX from "@next/mdx";
-import remarkMath from 'remark-math' // Support math like `$so$`.
+import remarkMath from "remark-math"; // Support math like `$so$`.
 import withPlugins from "next-compose-plugins";
 
 /** @type {import('next').NextConfig} */
@@ -18,8 +18,8 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkGfm, remarkMath],
-    rehypePlugins: [[rehypeKatex, {throwOnError: true, strict: true}]],
-  },
+    rehypePlugins: [[rehypeKatex, { throwOnError: true, strict: true }]]
+  }
 });
 
 export default withPlugins([withBundleAnalyzer, withMDX], nextConfig);

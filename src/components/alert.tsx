@@ -1,6 +1,3 @@
-import Container from "./container";
-import cn from "classnames";
-
 type Props = {
   preview?: boolean;
 };

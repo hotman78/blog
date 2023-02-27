@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./components/**/*.tsx", "./pages/**/*.tsx", 'node_modules/preline/dist/*.js',],
+  content: [
+    "./components/**/*.tsx",
+    "./pages/**/*.tsx",
+    "node_modules/preline/dist/*.js"
+  ],
   theme: {
     extend: {
       colors: {
@@ -34,6 +38,6 @@ module.exports = {
       }
     }
   },
-  plugins: [require('preline/plugin'),],
-  darkMode: 'media'
+  plugins: [require("preline/plugin")],
+  darkMode: "media"
 };

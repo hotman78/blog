@@ -10,7 +10,9 @@ const MoreStories = ({ posts }: Props) => {
     <section>
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="max-w-2xl mb-10">
-          <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Articles</h2>
+          <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+            Articles
+          </h2>
           {/* <p className="mt-1 text-gray-600 dark:text-gray-400">See how game-changing companies are making the most of every engagement with Preline.</p> */}
         </div>
 

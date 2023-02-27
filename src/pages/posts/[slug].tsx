@@ -44,7 +44,7 @@ export default function Post({ post, preview }: Props) {
                 <PostHeader />
                 <PostBody post={post} />
                 {/* <PostSidebar post={post} /> */}
-                <Comments/>
+                <Comments />
               </div>
             </article>
           </>

@@ -8,7 +8,7 @@ export default function getTableOfContent(content: string) {
   const tableOfContent: TableOfContent[] = [];
   elements.forEach(element => {
     const level = element.tagName;
-    const title = "a";//element.innerHTML.split("</a> ")[1];
+    const title = "a"; //element.innerHTML.split("</a> ")[1];
     const href = "#" + element.id;
     const record = { level: level, title: title, href: href };
     tableOfContent.push(record);
