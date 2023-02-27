@@ -17,7 +17,7 @@ const Layout = ({ preview, children }: Props) => {
         <main>{children}</main>
       </div>
       <Footer />
-      <Alert preview={preview} />
+      {/* <Alert preview={preview} /> */}
     </>
   );
 };
