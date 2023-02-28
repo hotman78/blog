@@ -5,11 +5,11 @@ import matter from "gray-matter";
 const postsDirectory = join(process.cwd(), "_posts");
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+  return fs.readdirSync(postsDirectory).map(x=>Buffer.from(x).toString('base64url'));
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, "");
+  const realSlug = Buffer.from(slug, 'base64url').toString().replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
@@ -23,7 +23,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   // Ensure only the minimal needed data is exposed
   fields.forEach(field => {
     if (field === "slug") {
-      items[field] = realSlug;
+      items[field] = slug;
     }
     if (field === "content") {
       items[field] = content;
