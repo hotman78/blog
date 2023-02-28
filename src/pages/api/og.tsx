@@ -18,8 +18,8 @@ export default function handler(req: NextRequest) {
       (
         <div
           style={{
-            backgroundImage: "url(https://og-image-example.vercel.app/bg.png)",
-            backgroundColor: "#fff",
+            // backgroundImage: "url(https://og-image-example.vercel.app/bg.png)",
+            background: "white",
             backgroundSize: "100% 100%",
             height: "100%",
             width: "100%",
@@ -57,7 +57,7 @@ export default function handler(req: NextRequest) {
               lineHeight: 1.3
             }}
           >
-            ✏️ OG Image Examples
+            by hotman78
           </div>
         </div>
       ),
