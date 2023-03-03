@@ -18,7 +18,7 @@ const MoreStories = ({ posts }: Props) => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {posts.map(post => (
-            <PostPreview key={post.date+post.slug} post={post} />
+            <PostPreview key={post.date + post.slug} post={post} />
           ))}
         </div>
       </div>
