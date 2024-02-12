@@ -34,8 +34,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           // ]
         }}
         twitter={{
-          handle: "@handle",
-          site: "@site",
+          handle: "@hotmanww",
+          site: "@hotmanww",
           cardType: "summary_large_image"
         }}
       />
