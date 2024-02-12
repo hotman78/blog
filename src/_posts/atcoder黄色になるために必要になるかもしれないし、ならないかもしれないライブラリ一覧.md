@@ -52,7 +52,7 @@ online/offline dynamic connectivity:
 
 # 形式的べき級数
 
-[https://judge.yosupo.jp/:title]を埋めれるようなやつ一つ持っておけば OK
+https://judge.yosupo.jp/ を埋めれるようなやつ一つ持っておけば OK
 atcoder では mod を取らないやつがよく聞かれるので mod 2^64-2^32+1 もあるといいかも(僕は持ってない)
 
 # データ構造
@@ -74,8 +74,8 @@ disjoint sparse table:
 
 32 分木 trie:
 高速な set の実装に使える(new をメモリプールで高速しないと速くならない？)
-[https://topcoder-g-hatena-ne-jp.jag-icpc.org/spaghetti_source/20121216/1355652855.html:title]
-[https://qiita.com/tubo28/items/f058582e457f6870a800:title]
+https://topcoder-g-hatena-ne-jp.jag-icpc.org/spaghetti_source/20121216/1355652855.html
+https://qiita.com/tubo28/items/f058582e457f6870a800
 
 kdtree:
 要らなそう
@@ -90,7 +90,7 @@ convex hull trick するやつ
 
 RMQ:
 黄色になってから作った
-[tex:\lt O(N),O(1)\gt]の RMQ
+$\lt O(N),O(1)\gt$ の RMQ
 
 skew_heap:
 手軽なマージ可能ヒープ、非想定が殴れるかも
@@ -119,21 +119,21 @@ wavelet_matrix:
 atcoder で出がち(並列二分探索を想定解に出来るため)
 
 永続 queue:
-永続配列使った[tex:O(logN)]実装しか持ってないけどこれで十分？
+永続配列使った $\mathcal{O}(logN)$ 実装しか持ってないけどこれで十分？
 
 永続 stack:
-永続配列使った[tex:O(logN)]実装しか持ってないけどこれで十分？
+永続配列使った $\mathcal{O}(logN)$ 実装しか持ってないけどこれで十分？
 簡単に作れるとの情報をもらったので、作ります
 
 # グラフアルゴリズム
 
 ダイクストラ:
-pbds 使用前提で[tex:O(E+VlogV)]に高速化出来るやつは持ってて損は無いかも
+pbds 使用前提で $\mathcal{O}(E+V\log V)$に高速化出来るやつは持ってて損は無いかも
 Travel by Car で after contest の TLE を防ぐことが出来た例あり
 
 重心分解:
 この前記事を書いた
-[https://qiita.com/hotman78/items/6d54c2713bc151a0a1ce:title]
+https://qiita.com/hotman78/items/6d54c2713bc151a0a1ce
 
 支配木:
 趣味
@@ -192,10 +192,10 @@ modint に合わせて
 特に使う機会はないかも(NTT くらい？)
 
 素数判定:
-ミラーラビンの[tex:O(logN)]を持っておくと便利
+ミラーラビンの $\mathcal{O}(\log N)$ を持っておくと便利
 
 素因数分解:
-ロー法+ミラーラビンで[tex:O(N^{1/4})]を持っておくと殴れがち
+ロー法+ミラーラビンで $\mathcal{O}(N^{\frac{1}{4}})$ を持っておくと殴れがち
 
 ラグランジュ補間:
 0~N-1 項渡すと k 項目が帰ってくる感じ
@@ -204,7 +204,7 @@ modint に合わせて
 持ってて損はない
 
 sum*of_floor_linear:
-[tex:\sum*{i=0}^{n-1}[\frac{a \times i +b}{c}]]の計算
+$\sum*{i=0}^{n-1} \lbrack\frac{a \times i +b}{c}\rbrack$ の計算
 sum_of_floor_linear を解くのに使える
 
 tetration:
@@ -212,7 +212,7 @@ a^a^a^a^a^a...の計算
 tetration を解くのに使える
 
 totient_sum:
-[https://yukicoder.me/wiki/sum_totient:title]
+https://yukicoder.me/wiki/sum_totient
 atcoder 以外ではわりかし活躍しそう
 
 離散平方:
@@ -267,4 +267,4 @@ monotone_minima
 
 オフラインオンライン変換
 簡単だけど強力
-[tex:dp\[j\]=min(dp\[i\]+f(i,j))]を[tex:O(N\log N)]とか[tex:O(N(\log N)^2)]で解く事ができる
+$\mathrm{dp}\lbrack j \rbrack = \min(\mathrm{dp}\lbrack i\rbrack +f(i,j))$を $\mathcal{O}(N\log N)$とか$\mathcal{O}(N(\log N)^2)$ で解く事ができる
