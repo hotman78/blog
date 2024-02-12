@@ -9,7 +9,7 @@ type Props = { post: PostType };
 const Article = ({ post }: Props) => {
   return (
     <>
-      <div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
+      <div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-24 sm:px-6 lg:px-8 mx-auto">
         <div className="max-w-2xl">
           {/* Avatar Media */}
           <div className="flex justify-between items-center mb-6">
