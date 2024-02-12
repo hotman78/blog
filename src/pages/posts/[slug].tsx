@@ -38,7 +38,7 @@ export default function Post({ post, preview }: Props) {
             <article>
               <Head>
                 <title>{post.title}</title>
-                <meta property="og:image" content={ogImage} />
+                <meta property="og:image" content={`https://blog.hotman78.com${ogImage}`} />
               </Head>
               <div>
                 <PostHeader />

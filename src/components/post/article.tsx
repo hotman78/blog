@@ -107,7 +107,7 @@ const Article = ({ post }: Props) => {
                       // className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400"
                       className="py-1.5 px-2.5 sm:py-2 sm:px-3 inline-flex justify-center items-center gap-x-1.5 sm:gap-x-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-xs sm:text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
                       text={post.title}
-                      url="https://blog.hotman78.com/"
+                      url={`https://blog.hotman78.com/posts/${post.slug}`}
                       hashtags={[]}
                     >
                       <svg
@@ -252,7 +252,7 @@ const Article = ({ post }: Props) => {
                     <TwitterIntentTweet
                       className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400"
                       text={post.title}
-                      url="https://blog.hotman78.com/"
+                      url={`https://blog.hotman78.com/posts/${post.slug}`}
                       hashtags={[]}
                     >
                       <svg
