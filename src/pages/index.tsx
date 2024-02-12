@@ -18,7 +18,7 @@ export default function Index({ allPosts }: Props) {
       <Layout>
         <Head>
           <title> {BLOG_TITLE} </title>
-          <meta property="og:image" content={`${BLOG_URL}/api/og/?title=${BLOG_TITLE}`} />
+          <meta property="og:image" content={`${BLOG_URL}/api/og/?title=hotman's_blog`} />
         </Head>
         <Container>
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
