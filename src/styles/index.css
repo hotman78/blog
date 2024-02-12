@@ -29,7 +29,14 @@
   
   .rlc-container:link,
   .rlc-container:visited {
-    color: #EAEAEA;
+    color: #333;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .rlc-container:link,
+    .rlc-container:visited {
+        color: #EAEAEA;
+    }
   }
   
   .rlc-container:hover {
