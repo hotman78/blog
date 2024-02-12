@@ -3,6 +3,7 @@ import DateFormatter from "../date-formatter";
 import type PostType from "../../interfaces/post";
 import Card from "../card";
 import Comments from "../comment";
+import { TwitterIntentTweet } from "../TwitterIntentTweet";
 
 type Props = { post: PostType };
 const Article = ({ post }: Props) => {
@@ -102,9 +103,12 @@ const Article = ({ post }: Props) => {
 
                   {/* Button Group */}
                   <div>
-                    <button
-                      type="button"
+                    <TwitterIntentTweet
+                      // className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400"
                       className="py-1.5 px-2.5 sm:py-2 sm:px-3 inline-flex justify-center items-center gap-x-1.5 sm:gap-x-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-xs sm:text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                      text={post.title}
+                      url="https://blog.hotman78.com/"
+                      hashtags={[]}
                     >
                       <svg
                         className="w-3.5 h-3.5"
@@ -117,7 +121,7 @@ const Article = ({ post }: Props) => {
                         <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                       </svg>
                       Tweet
-                    </button>
+                    </TwitterIntentTweet>
                   </div>
                   {/* End Button Group */}
                 </div>
@@ -245,9 +249,11 @@ const Article = ({ post }: Props) => {
                       Copy link
                     </a>
                     <div className="border-t border-gray-600 my-2"></div>
-                    <a
+                    <TwitterIntentTweet
                       className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                      href="#"
+                      text={post.title}
+                      url="https://blog.hotman78.com/"
+                      hashtags={[]}
                     >
                       <svg
                         className="w-4 h-4"
@@ -260,7 +266,7 @@ const Article = ({ post }: Props) => {
                         <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                       </svg>
                       Share on Twitter
-                    </a>
+                    </TwitterIntentTweet>
                     {/* <a
                       className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-400"
                       href="#"
