@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import Post from "../interfaces/post";
+import { BLOG_TITLE, BLOG_URL } from "../lib/constants";
 
 type Props = {
   allPosts: Post[];
@@ -16,7 +17,8 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title> Hotman s blog </title>
+          <title> {BLOG_TITLE} </title>
+          <meta property="og:image" content={`${BLOG_URL}/api/og/?title=${BLOG_TITLE}`} />
         </Head>
         <Container>
           {allPosts.length > 0 && <MoreStories posts={allPosts} />}
