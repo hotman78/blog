@@ -17,7 +17,7 @@ const Footer = () => {
 
           <div className="mt-3">
             {/* <p className="text-gray-500"> </p> */}
-            <p className="text-gray-500">© 2023 hotman78.</p>
+            <p className="text-gray-500">© 2024 hotman78.</p>
           </div>
 
           {/* <!-- Social Brands --> */}

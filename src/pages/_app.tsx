@@ -14,7 +14,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      <Component {...pageProps} />;
       <DefaultSeo
         defaultTitle="hotman's blog"
         description="hotman のブログです。"
@@ -40,6 +39,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           cardType: "summary_large_image"
         }}
       />
+      <Component {...pageProps} />;
       <Analytics />
     </>
   );

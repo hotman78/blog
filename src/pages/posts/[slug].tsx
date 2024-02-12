@@ -13,6 +13,7 @@ import type PostType from "../../interfaces/post";
 import PostSidebar from "../../components/post/sidebar";
 import { useMemo } from "react";
 import Comments from "../../components/comment";
+import { BLOG_URL } from "../../lib/constants";
 
 type Props = {
   post: PostType;
@@ -37,8 +38,8 @@ export default function Post({ post, preview }: Props) {
           <>
             <article>
               <Head>
-                <title>{post.title}</title>
-                <meta property="og:image" content={`https://blog.hotman78.com${ogImage}`} />
+                <title>{`${post.title} | ${BLOG_URL}`}</title>
+                <meta property="og:image" content={`${BLOG_URL}${ogImage}`} />
               </Head>
               <div>
                 <PostHeader />
