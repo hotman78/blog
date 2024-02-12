@@ -67,11 +67,9 @@ https://kmyk.github.io/cp-unspoiler/?q=aHR0cHM6Ly9hdGNvZGVyLmpwL2NvbnRlc3RzL2FnY
 
 想定解は桁 DP ではないです
 
-::::details ヒント
-
+<details><summary>ヒント</summary>
 $N$ 以下の正整数の集合に対する NFA と考えられるので、集合の集合を管理する DFA に帰着されます。
-
-::::
+</details>
 
 [解答例](https://atcoder.jp/contests/agc015/submissions/28049610)
 
@@ -81,7 +79,6 @@ $N$ 以下の正整数の集合に対する NFA と考えられるので、集�
 
 noshi91 さんに桁 DP の有名題を非決定性桁 DP で解いて頂いたやつです
 とても機械的に解けるようになっていて分かりやすいので是非参考にしてみて下さい！！
-
-::::details twitter リンク(Atcoder の問題へのリンクあり)
+<details><summary>twitter リンク(Atcoder の問題へのリンクあり)</summary>
 https://twitter.com/noshi91/status/1473633490617126919
-::::
+</details>

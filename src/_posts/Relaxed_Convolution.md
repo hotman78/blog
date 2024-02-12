@@ -20,6 +20,7 @@ $\mathcal{O}(N\log ^2 N)$ で多項式の積を計算するオンラインアル
 ## relaxed convolution のやり方
 
 Kiri さんのわかりやすい解説があったのでここでは割愛させて下さい
+
 https://qiita.com/Kiri8128/items/1738d5403764a0e26b4c
 
 https://www.sciencedirect.com/science/article/pii/S0747717102905626
