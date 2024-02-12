@@ -5,13 +5,13 @@ const Header = () => {
         className="relative max-w-7xl w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
         aria-label="Global"
       >
-        <div className="flex items-center justify-between">
-          <a
-            className="flex-none text-xl font-semibold dark:text-white"
-            href="/"
-            aria-label="Brand"
-          >
-            hotman&apos;s blog
+        <div className="flex items-center justify-between ">
+            <a
+              className="flex-none text-xl font-semibold dark:text-white sm:py-6"
+              href="/"
+              aria-label="Brand"
+            >
+              hotman&apos;s blog
           </a>
           <div className="sm:hidden">
             <button
@@ -50,7 +50,7 @@ const Header = () => {
           className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
         >
           <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
-            <a
+            {/* <a
               className="font-medium text-blue-600 sm:py-6 dark:text-blue-500"
               href="/"
               aria-current="page"
@@ -74,9 +74,10 @@ const Header = () => {
               href="/"
             >
               Blog
-            </a>
+            </a> */}
 
-            <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
+            {/* sub-menu */}
+            {/* <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
               <button
                 type="button"
                 className="flex items-center w-full text-gray-500 hover:text-gray-400 font-medium dark:text-gray-400 dark:hover:text-gray-500 "
@@ -164,8 +165,9 @@ const Header = () => {
                   Team Account
                 </a>
               </div>
-            </div>
+            </div>*/}
 
+            {/* login */}
             {/* <div className="flex items-center gap-x-2 sm:ml-auto">
               <a className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-500" href="#">
                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
